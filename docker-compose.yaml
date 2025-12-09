@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: john-http-server
+    restart: always
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - .env
+
+    environment:
+      - DB_URI=${DB_URI}
+
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:6
+    container_name: mongo-db
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

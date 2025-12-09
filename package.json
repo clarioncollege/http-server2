@@ -1,0 +1,46 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "simple http server with express",
+  "license": "ISC",
+  "author": "Adebisi Tosin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server",
+    "test": "jest --watchAll --no-cache  --detectOpenHandles",
+      "test:ci": "jest"
+  },
+   "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./src/test/setup.js"
+    ]
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.0",
+    "googleapis": "^165.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mailtrap": "^4.3.0",
+    "mongoose": "^8.19.2",
+    "node-mailer": "^0.1.1",
+    "nodemailer": "^7.0.10",
+    "perfect-express-sanitizer": "^2.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "mongodb-memory-server": "^10.4.1",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.6"
+  }
+}
